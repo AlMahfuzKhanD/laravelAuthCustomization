@@ -12,6 +12,16 @@
                     <a href="#"><i class="halflings-icon cog"></i></a>
                 </div>
                 <h2>Login to your account</h2>
+                @if (session('successMsg'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('successMsg') }}
+                    <button type="button" class="close" data-dissmiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+                    
+                @endif
                 <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                     {{ csrf_field() }}
                     <fieldset>
